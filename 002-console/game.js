@@ -5,8 +5,8 @@ const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
-let num = Math.floor(Math.random() * 10 + 1);
-rl.question(`Загадано число в диапазоне от 0 до 10 \n`, (userInput) => {
+let num = Math.floor(Math.random() * 100 + 1);
+rl.question(`Загадано число в диапазоне от 0 до 100 \n`, (userInput) => {
   if (userInput.trim() == num) {
     rl.close();
   } else if (userInput.trim() > num) {
