@@ -19,7 +19,6 @@ rl.question(
         .get(config.url, { params })
         .then((response) => {
           const apiResponse = response.data;
-          //   console.log(apiResponse);
           console.log(`
             Current weather description is ${apiResponse.current.weather_descriptions[0]}
             Current temperature in ${apiResponse.location.name} is ${apiResponse.current.temperature}℃
