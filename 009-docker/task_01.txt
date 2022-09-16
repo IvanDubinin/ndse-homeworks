@@ -1,0 +1,43 @@
+apple@Apollon 009-Docker % docker pull busybox
+Using default tag: latest
+latest: Pulling from library/busybox
+729ce43e2c91: Pull complete 
+Digest: sha256:ad9bd57a3a57cc95515c537b89aaa69d83a6df54c4050fcf2b41ad367bec0cd5
+Status: Downloaded newer image for busybox:latest
+docker.io/library/busybox:latest
+apple@Apollon 009-Docker % docker run --name pinger -it busybox ping -c 7 netology.ru
+PING netology.ru (188.114.98.202): 56 data bytes
+
+--- netology.ru ping statistics ---
+7 packets transmitted, 0 packets received, 100% packet loss
+apple@Apollon 009-Docker % docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                      PORTS     NAMES
+aa284e5b62cc   busybox   "ping -c 7 netology.…"   42 seconds ago   Exited (1) 25 seconds ago             pinger
+apple@Apollon 009-Docker % docker logs pinger
+PING netology.ru (188.114.98.202): 56 data bytes
+
+--- netology.ru ping statistics ---
+7 packets transmitted, 0 packets received, 100% packet loss
+apple@Apollon 009-Docker % docker start pinger
+pinger
+apple@Apollon 009-Docker % docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS          PORTS     NAMES
+aa284e5b62cc   busybox   "ping -c 7 netology.…"   2 minutes ago   Up 10 seconds             pinger
+apple@Apollon 009-Docker % docker logs pinger
+PING netology.ru (188.114.98.202): 56 data bytes
+
+--- netology.ru ping statistics ---
+7 packets transmitted, 0 packets received, 100% packet loss
+PING netology.ru (188.114.99.202): 56 data bytes
+
+--- netology.ru ping statistics ---
+7 packets transmitted, 0 packets received, 100% packet loss
+apple@Apollon 009-Docker % docker stop pinger
+pinger
+apple@Apollon 009-Docker % docker rm pinger  
+pinger
+apple@Apollon 009-Docker % docker rmi busybox
+Untagged: busybox:latest
+Untagged: busybox@sha256:ad9bd57a3a57cc95515c537b89aaa69d83a6df54c4050fcf2b41ad367bec0cd5
+Deleted: sha256:2bd29714875d9206777f9e8876033cbcd58edd14f2c0f1203435296b3f31c5f7
+Deleted: sha256:3e9498aeb76f9f5834ba3c6c8c7932daeb15b66064eeea54c25e9f31074ecffe
