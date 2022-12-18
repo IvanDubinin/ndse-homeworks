@@ -26,10 +26,10 @@
   authors: "string"
 }
 ``` 
-РЕШЕНИЕ ДОМАШНЕГО ЗАДАНИЯ:
+#### РЕШЕНИЕ ДОМАШНЕГО ЗАДАНИЯ:
 
-1.Запрос(ы) для *вставки* данных минимум о двух книгах в коллекцию **books**:
-db.books.insirtOne(
+* 1.Запрос(ы) для *вставки* данных минимум о двух книгах в коллекцию **books**:
+````db.books.insirtOne(
   {
     title: "Best book",
     description: "Programming",
@@ -43,14 +43,16 @@ db.books.insirtOne(
     authours: "open source"
   }
 )
-2. Запрос для *поиска* полей документов коллекции **books** по полю *title*:
-db.boos.find(
+````
+* 2. Запрос для *поиска* полей документов коллекции **books** по полю *title*:
+````db.boos.find(
   {
     title: { $exists: true }
   }
 )
-3. Запрос для *редактирования* полей: *description* и *authors* коллекции **books** по *_id* записи.
-db.books.update(
+````
+* 3. Запрос для *редактирования* полей: *description* и *authors* коллекции **books** по *_id* записи.
+````db.books.update(
   {
     "_id": ObjectID("...required id...")
   },
@@ -61,7 +63,7 @@ db.books.update(
     }
   }
 )
-
+````
 
 
 
