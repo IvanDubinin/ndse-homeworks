@@ -44,14 +44,14 @@ db.books.insirtOne(
   }
 )
 ````
-* 2. Запрос для *поиска* полей документов коллекции **books** по полю *title*:
+* 2.Запрос для *поиска* полей документов коллекции **books** по полю *title*:
 ````db.boos.find(
   {
     title: { $exists: true }
   }
 )
 ````
-* 3. Запрос для *редактирования* полей: *description* и *authors* коллекции **books** по *_id* записи.
+* 3.Запрос для *редактирования* полей: *description* и *authors* коллекции **books** по *_id* записи.
 ````db.books.update(
   {
     "_id": ObjectID("...required id...")
