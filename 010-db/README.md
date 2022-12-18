@@ -29,7 +29,8 @@
 #### РЕШЕНИЕ ДОМАШНЕГО ЗАДАНИЯ:
 
 * 1.Запрос(ы) для *вставки* данных минимум о двух книгах в коллекцию **books**:
-````db.books.insirtOne(
+````
+db.books.insirtOne(
   {
     title: "Best book",
     description: "Programming",
